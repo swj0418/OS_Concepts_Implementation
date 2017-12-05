@@ -1,0 +1,6 @@
+package scheduler;
+import java.util.ArrayList;
+
+public class JobQueue extends ArrayList {
+	ArrayList<>
+}

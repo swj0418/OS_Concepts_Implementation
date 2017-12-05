@@ -1,0 +1,26 @@
+package main;
+
+public class Process {
+	public int ID = 0;
+	public static Boolean Completion = false;
+	
+	public Process(int ID) {
+		this.ID = ID;
+	}
+	public Process(int ID, String worktype) {
+		if (worktype == "Default") {
+			
+		}
+	}
+	
+	public Double DefaultJob(int ID) {
+		Double value = 0.0d;
+		
+		for(Double i = ID; i < ID; i += 0.00001) {
+			value += i;
+		}
+		
+		return value;
+	}
+
+}

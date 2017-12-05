@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class MyTimerTask extends TimerTask {
+	
+	@Override
+	public void run() {
+		System.out.println("Timer Task Started at : " + new Date());
+		task();
+		System.out.println("Timer Task Completed at : " + new Date());
+	}
+	
+	public void task() {
+		try {
+			Thread.sleep(5000);
+		} catch(InterruptedException e) {
+			System.out.println("Interrupted" + new Date());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] ar) {
+		TimerTask tt = new MyTimerTask();
+		Timer timer = new Timer(true);
+		timer.scheduleAtFixedRate(tt, 0, 2 * 1000);
+		System.out.println("Timer Task started");
+		
+		try {
+			Thread.sleep(3000);
+		} catch(InterruptedException ex) {
+			ex.printStackTrace();
+		}
+		timer.cancel();
+		System.out.println("Timer Task cancelled");
+		
+		try {
+			Thread.sleep(10000);
+		} catch(InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
+}

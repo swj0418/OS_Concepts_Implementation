@@ -1,0 +1,21 @@
+package testsite;
+import process.*;
+import scheduler.*;
+
+public class Test {
+	public static void main(String[] ar) {
+		Process p = new Process();
+		Scheduler s = new Scheduler();
+		s.addprocess_t_jobqueue(p);
+		
+		
+		//p.Job_Ex();
+		System.out.println("\n" + p.my_PCB.accounting_info.init_time);
+		p.Job_Ex_2();
+		s.jq.nq.ShowQueueType();
+		Process processfetched = (Process) s.jq.nq.nq.getLast();
+		//System.out.println(processfetched.my_PCB.accounting_info.init_time);
+		//System.out.println(((Process_Ex) s.jq.nq.nq.getLast()).my_PCB.accounting_info.init_time);
+		System.out.println(processfetched.my_PCB.accounting_info.time_elapsed);
+	}
+}

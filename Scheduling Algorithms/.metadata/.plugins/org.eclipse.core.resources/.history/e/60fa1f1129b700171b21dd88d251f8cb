@@ -1,0 +1,17 @@
+package process;
+
+public class Process_Ex {
+	public PCB my_PCB;
+	
+	public Process_Ex() {
+		my_PCB = new PCB();
+	}
+	
+	public void Job_Ex() {
+		System.out.print("Performing a job");
+		my_PCB.accounting_info.time_elapsed = System.currentTimeMillis() - my_PCB.accounting_info.init_time;
+	}
+	public void Job_Ex_2() {
+		System.out.println("Performing a job 2");
+	}
+}

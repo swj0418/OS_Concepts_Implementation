@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class TT {
+	public static TimerTask TimerT;
+	
+	public static void main(String[] ar)
+	{
+		TimerTask tt = timertask();
+		try {
+			tt.run();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		TimerT = timertask();
+		TimerT.run();
+	}
+	
+	public static TimerTask timertask() {
+		
+		System.out.println("This is a timer task");
+		
+		return null;
+	}
+}

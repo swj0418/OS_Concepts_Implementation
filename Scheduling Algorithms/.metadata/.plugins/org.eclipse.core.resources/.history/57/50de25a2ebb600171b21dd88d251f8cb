@@ -1,0 +1,35 @@
+package process;
+
+public class PCB {
+	int state = 0;
+	long counter = 0; // Points at which line to execute next
+	registers registers;
+	sched_info sched_info;
+	memory_info memoryinfo;
+	accounting_info accounting_info;
+	io_state_info io_state_info;
+}
+
+class registers {
+	//Accumulator
+	//Index Register
+	//Stack Register
+	//General_Purpose Register
+	//Condition Code
+}
+
+class sched_info {
+	
+}
+
+class memory_info {
+	
+}
+
+class accounting_info {
+	
+}
+
+class io_state_info {
+	
+}

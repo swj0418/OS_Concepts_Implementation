@@ -1,0 +1,36 @@
+package main;
+
+public class Process{
+	public int ID = 0;
+	public static Boolean Completion = false;
+	
+	public Process(int ID) {
+		this.ID = ID;
+	}
+	public Process() {
+		
+	}
+	
+	//Default Job
+	Double[]DefaultResult = new Double[10];
+	public Process(int ID, String worktype) {
+		this.ID = ID;
+	}
+
+	public Double DefaultJob(Process p) {
+		Double value = 0.0d;
+		
+		for(Double i = p.DefaultResult[p.ID]; i < p.ID + 1; i += 0.00001) {
+			value += i;
+			
+			//Temporary Context Saving for a Context Switching
+			DefaultResult[p.ID] = value;
+		}
+		
+		System.out.print("Processing process..." + p.ID);
+		Completion = true;
+		System.out.println("   Completion : " + p.Completion);
+		return value;
+	}
+
+}

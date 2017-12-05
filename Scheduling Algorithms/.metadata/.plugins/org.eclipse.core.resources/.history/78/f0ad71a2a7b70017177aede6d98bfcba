@@ -1,0 +1,7 @@
+import java.util.*;
+
+public class MyTimerTask extends TimerTask {
+	public void run() {
+		System.out.println("Timer Task Started at : " + new Date());
+	}
+}

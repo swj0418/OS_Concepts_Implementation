@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class TT {
+	TimerTask tt;
+	
+	public static void main(String[] ar)
+	{
+		
+	}
+	public void task() {
+		System.out.println("This is a timer task");
+	}
+}

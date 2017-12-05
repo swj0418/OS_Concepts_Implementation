@@ -1,0 +1,57 @@
+package racecondition;
+import java.util.*;
+
+public class RaceCondition implements Runnable {
+	int JobID;
+	private Thread t;
+	static int counter = 5;
+	
+	public RaceCondition() {
+		
+	}
+	
+	public RaceCondition(int JobID) {
+		this.JobID = JobID;
+	}
+	
+	public void run() {
+		
+	}
+	
+	public void run(int counter, int JobID) {
+		if(JobID == 1) {
+			counter++;
+		} else if(JobID == 2) {
+			counter--;
+		}
+	}
+	
+	public void start() {
+		System.out.println("Starting Job " + JobID);
+		if(t == null) {
+			t = new Thread();
+			t.start();
+		}
+	}
+	
+	public void incre(int counter) {
+		counter++;
+	}
+	public void decre(int counter) {
+		counter--;
+	}
+	
+	public static void main(String[] ar) {
+		//int counter = 5;
+		
+		RaceCondition R1 = new RaceCondition(1);
+		RaceCondition R2 = new RaceCondition(2);
+		-
+		R1.start();
+		System.out.println(counter);
+		R2.start();
+		System.out.println(counter);
+		
+
+	}
+}

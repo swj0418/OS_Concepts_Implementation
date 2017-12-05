@@ -1,0 +1,70 @@
+package racecondition;
+//Critical Section Peterson's Solution Solution
+public class cSection{
+ int turn;
+ boolean flag[] = new boolean[2];
+ int i=0,j=1;
+ //CSC variables
+ int counter=0;// counter for giving processes a upper bound 
+ int cscVar=13;
+ private class iTh extends Thread{ // process thread for i
+     public void run(){
+             try{
+                 do{
+                	 /*
+                     flag[i]= true;
+                     turn=j;
+                     while(flag[j]&&turn==j);// wait for j to finish
+                     */
+                     //critical section
+                     System.out.println("I is in critical section");
+                     cscVar++;
+                     System.out.println(cscVar);
+                     counter++;
+                     System.out.println("counter is "+counter+"\n___________");
+                     //
+                     //flag[i]= false;
+                     //remainder section
+                 }while(counter<100); // 100 is upper bound, to remove infinite looping
+             }
+             catch(Exception ex){
+                 ex.printStackTrace();
+             }
+         }
+     }
+ private class jTh extends Thread{ // process thread for j
+         public void run(){
+             try{
+                 do{
+                	 /*
+                     flag[j]= true;
+                     turn=i;
+                     while(flag[i]&&turn==i);// wait for i to finish
+                     */
+                     //critical section
+                     System.out.println("J is in critical section");
+                     cscVar--;
+                     System.out.println(cscVar);
+                     counter++;
+                     System.out.println("counter is "+counter+"\n___________");
+                     //
+                     //flag[j]= false;
+                     //remainder section
+                 }while(counter<100); // 100 is upper bound, to remove infinite looping
+             }
+             catch(Exception ex){
+                 ex.printStackTrace();
+             }
+         }
+     }
+ public cSection(){
+     System.out.println("Starting Threads/Processes");
+     Thread I= new iTh();
+     Thread J = new jTh();
+     I.start(); //start process i
+     J.start(); //start process j
+ }
+     public static void main(String[] args){
+     cSection cSec = new cSection();
+ }
+}

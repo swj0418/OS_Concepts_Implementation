@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class MyTimerTask extends TimerTask {
+	
+	@Override
+	public void run() {
+		System.out.println("Timer Task Started at : " + new Date());
+		task()
+		System.out.println("Timer Task Completed at : " + new Date());
+	}
+	
+	public void task() {
+		try {
+			Thread.sleep(5000);
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] ar) {
+		
+	}
+}

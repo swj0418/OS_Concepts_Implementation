@@ -1,0 +1,19 @@
+package process;
+
+public class PCB {
+	int state = 0;
+	long counter = 0;
+	registers registers;
+	sched_info sched_info;
+	
+
+}
+
+class registers {
+	
+}
+
+class sched_info {
+	
+}
+

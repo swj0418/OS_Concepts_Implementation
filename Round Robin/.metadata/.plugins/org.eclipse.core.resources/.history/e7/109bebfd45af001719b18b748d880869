@@ -1,0 +1,46 @@
+package main;
+
+public class Process implements Runnable{
+	public int ID = 0;
+	public static Boolean Completion = false;
+	
+	public Process(int ID) {
+		this.ID = ID;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+	public void run(String worktype) {
+		
+	}
+	
+	//Default Job
+	Double[]DefaultResult = new Double[10];
+	public Process(int ID, String worktype) {
+		this.ID = ID;
+		
+		if (worktype == "Default") {
+			for(int i = 0; i < ID; i++) {
+				DefaultResult[i] = DefaultJob(ID);
+			}
+		}
+		
+	}
+	
+	public Double DefaultJob(int ID) {
+		Double value = 0.0d;
+		
+		for(Double i = (double) ID; i < ID + 1; i += 0.00001) {
+			value += i;
+			
+			//Temporary Context Saving for a Context Switching
+			DefaultResult[ID] = value;
+		}
+		
+		Completion = true;
+		return value;
+	}
+
+}

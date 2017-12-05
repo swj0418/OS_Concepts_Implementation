@@ -1,0 +1,74 @@
+package process;
+
+public class PCB {
+	public int state; // 0 : New 1 : Ready 2 : Waiting 3. Running 4 : Terminated
+	public long counter; // Points at which line to execute next
+	public registers registers;
+	public sched_info sched_info;
+	public memory_info memoryinfo;
+	public accounting_info accounting_info;
+	public io_state_info io_state_info;
+	
+	public PCB() {
+		
+	}
+	
+	
+	public class registers {
+		//Accumulator
+		//Index Register
+		//Stack Register
+		//General_Purpose Register
+		//Condition Code
+	}
+	
+	public class sched_info {
+		public int priority;
+		public long sched_q_pointer;
+		
+		public class sched_var {
+			
+		}
+		
+	}
+
+	
+	public class accounting_info {
+		public long init_time = System.currentTimeMillis(); // Time when the process was initialized
+		//CPU usage time
+		public long time_elapsed; //Time elapsed - RealTime
+		//Time limit
+		//Account number
+		//Job or Process Number
+		accounting_info() {
+			
+		}
+		
+	}
+
+	public class memory_info {
+	//Base Register
+	//Limit Register
+	//Label & Segments...
+	}
+
+	public class io_state_info {
+	//Information regarding I/O devices
+	//List of open files
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Question : Do I have to declare everything public? So the OS can access all these information?
+*/

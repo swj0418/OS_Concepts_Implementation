@@ -1,0 +1,36 @@
+package main;
+
+public class Process {
+	public int ID = 0;
+	public static Boolean Completion = false;
+	
+	public Process(int ID) {
+		this.ID = ID;
+	}
+	public Process(int ID, String worktype) {
+		if (worktype == "Default") {
+			if(String.valueOf(ID).startsWith("1")) {
+				
+			} else if(String.valueOf(ID).startsWith("2")) {
+				
+			} else if(String.valueOf(ID).startsWith("3")) {
+				
+			} else if(String.valueOf(ID).startsWith("4")) {
+				
+			} else if(String.valueOf(ID).startsWith("5")) {
+				
+			}
+		}
+	}
+	
+	public Double DefaultJob(int ID) {
+		Double value = 0.0d;
+		
+		for(Double i = 0.d; i < ID; i += 0.00001) {
+			value += i;
+		}
+		
+		return value;
+	}
+
+}

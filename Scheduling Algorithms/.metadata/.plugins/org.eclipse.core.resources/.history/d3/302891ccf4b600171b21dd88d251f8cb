@@ -1,0 +1,15 @@
+package scheduler;
+
+import java.util.LinkedList;
+
+public class NewQueue extends LinkedList {
+	
+	
+	public NewQueue() {
+		
+	}
+
+	public void ShowQueueType() {
+		System.out.println("This is a new queue, linkedlist");
+	}
+}

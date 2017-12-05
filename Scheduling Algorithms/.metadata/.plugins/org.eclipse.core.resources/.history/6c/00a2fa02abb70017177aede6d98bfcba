@@ -1,0 +1,38 @@
+package testsite;
+import process.*;
+import scheduler.*;
+import java.util.*;
+
+public class Test {
+	static HashMap H;
+	
+	public static void main(String[] ar) {
+		Process_Ex p = new Process_Ex();
+		Scheduler s = new Scheduler();
+		s.addprocess_t_jobqueue(p);
+		
+		
+		//p.Job_Ex();
+		System.out.println("\n" + p.my_PCB.accounting_info.init_time);
+		p.Job_Ex_2();
+		s.jq.nq.ShowQueueType();
+		Process_Ex processfetched = (Process_Ex) s.jq.nq.nq.getLast();
+		//System.out.println(processfetched.my_PCB.accounting_info.init_time);
+		//System.out.println(((Process_Ex) s.jq.nq.nq.getLast()).my_PCB.accounting_info.init_time);
+		System.out.println(processfetched.my_PCB.accounting_info.time_elapsed);
+		
+		try {
+			H = HashMap.class.newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		
+		H.put(1, "First value");
+		H.put(2, "Second value");
+		
+		for(int i = 0; i < 2; i++) {
+			System.out.println(H.get(i));
+		}
+		
+	}
+}

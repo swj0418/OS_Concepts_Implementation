@@ -1,0 +1,18 @@
+package scheduler;
+
+public class Scheduler {
+	JobQueue q;
+	
+	public Scheduler() {
+		q = new JobQueue();
+	}
+	
+	public void addprocess_t_queue() {
+		
+	}
+	
+	public void addprocess_t_jobqueue() {
+		
+	}
+	
+}

@@ -1,0 +1,13 @@
+package roundRobin;
+import java.util.*;
+
+public class RR {
+	static Process[] process = new Process[10]; //Initializing 10 Processes
+	static CQueue Q = new CQueue();
+	static ArrayList<Process> fin_process = new ArrayList<Process>();
+	
+	public static void main(String[] ar)
+	{
+		
+	}
+}

@@ -1,0 +1,57 @@
+package main;
+import java.util.*;
+
+public class CircularQueue {
+	ArrayList<Process> Queue = new ArrayList<Process>();
+	int initial_size = 10;
+	int front = 0;
+	int end = 0;
+	
+	@SuppressWarnings("rawtypes")
+	HashMap<String, Process> QueueMap = new HashMap<String, Process>();
+	
+	CircularQueue() {}
+	CircularQueue(Process p) {
+		Queue.add(p);
+	}
+	public void addProcess(Process p) {
+		Queue.add(p);
+		QueueMap.put(String.valueOf(p.ID), p);
+		
+		Iterator itr = Queue.iterator();
+		int i = 0;
+		if(!itr.hasNext()) {
+			Queue.add(Queue.get(0));
+			//Queue.add(new Process(6, "Default"));
+			i++;
+			System.out.println(i);
+		}
+		
+	}
+	
+	public void destroyProcess(Process p) {
+		Queue.remove(p);
+	}
+	
+	// To show processes in the Queue
+	public void showProcesses() {
+		int i = 0;
+		Iterator itr = Queue.iterator();
+		
+		System.out.println("=====Current Processes=====");
+		while(itr.hasNext() == true) {
+			System.out.println("Process ID : " + Queue.get(i).ID);
+			i++;
+			if(i == Queue.size()) break;
+		}
+	}
+	
+	public Process get(int i) {
+		return Queue.get(i);
+	}
+	
+	public static void main(String[] ar) {
+		CircularQueue Q = new CircularQueue();
+	}
+
+}

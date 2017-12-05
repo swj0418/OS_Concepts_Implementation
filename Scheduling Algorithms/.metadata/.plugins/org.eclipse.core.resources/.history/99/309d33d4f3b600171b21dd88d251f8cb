@@ -1,0 +1,10 @@
+package testsite;
+import process.*;
+
+public class Test {
+	public static void main(String[] ar) {
+		Process_Ex p = new Process_Ex();
+		p.Job_Ex();
+		System.out.println(p.my_PCB.accounting_info.init_time);
+	}
+}

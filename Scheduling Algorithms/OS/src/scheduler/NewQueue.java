@@ -1,0 +1,16 @@
+package scheduler;
+
+import java.util.LinkedList;
+import process.Process_Ex;
+
+public class NewQueue {
+	public LinkedList nq = new LinkedList<Process_Ex>();
+	
+	public NewQueue() {
+		
+	}
+
+	public void ShowQueueType() {
+		System.out.println("This is a new queue, linkedlist");
+	}
+}

@@ -1,0 +1,50 @@
+package roundRobin;
+import java.util.*;
+
+public class RR {
+	static Process[] process = new Process[10]; //Initializing 10 Processes
+	static CQueue Q = new CQueue();
+	static ArrayList<Process> fin_process = new ArrayList<Process>();
+	
+	public static void main(String[] ar)
+	{
+		long t_3 = System.currentTimeMillis();
+		for(int i = 0; i < 10; i++) {
+			process[i] = new Process(i);
+			Q.addProcess(process[i]);
+		}
+		
+		/*
+		for(int i = 0; i < 10; i++) {
+			Q.process.get(i).job_1();
+			System.out.println("============ Process " + Q.process.get(i).ID + "==============");
+			System.out.println(Q.process.get(i).completion + " " + Q.process.get(i).timetaken + " " + Q.process.get(i).context);
+		}
+		*/
+		/*
+		Iterator itr = Q.process.iterator();
+		int i = 0;
+		while(itr.hasNext()) {
+			long t_s = System.currentTimeMillis();
+			
+			if(Q.process.get(i).completion == false) {
+				Q.process.get(i).on = true; // OS가 밖에서 뺐어오게 해야한다.
+				Q.process.get(i).job_1();
+				System.out.println("============ Process " + Q.process.get(i).ID + "==============");
+				System.out.println("Completion : " + Q.process.get(i).completion + " " +
+				"Time taken : " + Q.process.get(i).timetaken + " " + "Finished Result : " + Q.process.get(i).fin_res + " " + 
+				"Context : " + Q.process.get(i).context);
+				Q.itrProcess();
+			}
+			if(Q.process.get(i).completion == true) {
+				fin_process.add(Q.process.get(i));
+				Q.killProcess(Q.process.get(i));
+				Q.queueSize--;
+				
+				System.out.println("============ Finished Process " + Q.process.get(i).ID + "==============");
+				System.out.println(Q.process.get(i).completion + " " + Q.process.get(i).timetaken + " " + Q.process.get(i).context);
+			}
+		}
+		*/
+	}
+}

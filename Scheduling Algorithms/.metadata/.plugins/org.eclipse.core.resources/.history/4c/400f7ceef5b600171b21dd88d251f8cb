@@ -1,0 +1,13 @@
+package scheduler;
+import java.util.ArrayList;
+
+public class JobQueue extends ArrayList {
+	NewQueue nq = new NewQueue();
+	ReadyQueue rq = new ReadyQueue();
+	WaitingQueue wq = new WaitingQueue();
+	TerminatedQueue tq = new TerminatedQueue();
+	
+	public JobQueue() {
+		
+	}
+}
