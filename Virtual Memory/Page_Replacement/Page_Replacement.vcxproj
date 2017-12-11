@@ -142,8 +142,18 @@
     <ClCompile Include="Disk_Controller.cpp" />
     <ClCompile Include="OS.cpp" />
     <ClCompile Include="Pager.cpp" />
+    <ClCompile Include="PageTable.cpp" />
     <ClCompile Include="PMemory.cpp" />
+    <ClCompile Include="Process.cpp" />
     <ClCompile Include="VMemory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DiskController.h" />
+    <ClInclude Include="Pager.h" />
+    <ClInclude Include="PageTable.h" />
+    <ClInclude Include="PMemory.h" />
+    <ClInclude Include="Process.h" />
+    <ClInclude Include="VMemory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

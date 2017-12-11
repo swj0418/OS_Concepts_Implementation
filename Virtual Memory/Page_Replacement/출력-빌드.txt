@@ -1,0 +1,10 @@
+﻿1>------ 빌드 시작: 프로젝트: Page_Replacement, 구성: Debug Win32 ------
+1>Pager.cpp
+1>OS.cpp
+1>코드를 생성하고 있습니다...
+1>건너뛰고 있습니다... (관련된 변경 내용 없음)
+1>VMemory.cpp
+1>PMemory.cpp
+1>Page_Replacement.vcxproj -> E:\Programming\School\Operating_System_Code\Concept Implementation\OS_Concepts_Implementation\Virtual Memory\Page_Replacement\Debug\Page_Replacement.exe
+1>Page_Replacement.vcxproj -> E:\Programming\School\Operating_System_Code\Concept Implementation\OS_Concepts_Implementation\Virtual Memory\Page_Replacement\Debug\Page_Replacement.pdb (Partial PDB)
+========== 빌드: 성공 1, 실패 0, 최신 0, 생략 0 ==========

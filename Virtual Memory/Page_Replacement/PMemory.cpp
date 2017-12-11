@@ -4,48 +4,64 @@ using namespace std;
 class PMemory {
 private:
 	static PMemory* instance;
-	int memorysize;
-	int used;
-	int left;
+	int framecount = 100;
+	int frameused = 0;
+	int frameleft = framecount - frameused;
 	int *map;
-	int sizeofmap;
+	int *usedmap;
+	int *leftmap;
 
-	PMemory::PMemory() {}
-	PMemory::PMemory(int size) { memorysize = size; }
+	PMemory::PMemory() { }
+	PMemory::PMemory(int size) { }
 
 public:
+	void resetMemory() {
+		map = new int[framecount];
+		for (int i = 0; i < framecount; i++) {
+			map[i] = 0;
+		}
+	}
+
+	void putPage(int& at) {
+		map[at] = 1;
+		frameused++;
+		frameleft--;
+	}
+
+	void rmvPage(int & at) {
+		map[at] = 0;
+		frameused--;
+		frameleft++;
+	}
+
+	void printMemoryStatus() {
+		cout << "Physical Memory Status || " << "Frame Count : " << framecount << " Frame Left : " << frameleft << " Frame Used : " << frameused << endl;
+	}
+
 	void setMemorySize(int setsize) {
-		memorysize = setsize;
+		framecount = setsize;
 	}
 
 	int getMemorySize() {
-		return memorysize;
+		return framecount;
 	}
 	int getUsedSize() {
-		return used;
+		return frameused;
 	}
 	int getLeftSize() {
-		return left;
+		return frameleft;
 	}
 	int* getMemoryMap() {
 		return map;
 	}
-	int getSizeofMap() {
-		return sizeofmap;
-	}
 
-	void allocMemory(int size) {
-		this->memorysize = size;
-		map = new int[memorysize];
-		for (int i = 0; i < memorysize; i++) {
-			map[i] = 0;
-		}
-		sizeofmap = sizeof(map);
-	}
 	static PMemory* getinstance() {
 		if (!instance) {
 			instance = new PMemory();
 		}
 		return instance;
+	}
+	static void createInstance() {
+		instance = 0;
 	}
 };

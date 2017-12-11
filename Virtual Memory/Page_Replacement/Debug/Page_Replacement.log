@@ -1,3 +1,10 @@
-﻿  OS.cpp
+﻿  Pager.cpp
+  PageTable.cpp
+  OS.cpp
+  코드를 생성하고 있습니다...
+  건너뛰고 있습니다... (관련된 변경 내용 없음)
+  VMemory.cpp
+  Process.cpp
+  PMemory.cpp
   Page_Replacement.vcxproj -> E:\Programming\School\Operating_System_Code\Concept Implementation\OS_Concepts_Implementation\Virtual Memory\Page_Replacement\Debug\Page_Replacement.exe
   Page_Replacement.vcxproj -> E:\Programming\School\Operating_System_Code\Concept Implementation\OS_Concepts_Implementation\Virtual Memory\Page_Replacement\Debug\Page_Replacement.pdb (Partial PDB)
